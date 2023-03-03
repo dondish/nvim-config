@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
-    use 'theprimeagen/harpoon' -- issue with Windows compatiblity, waiting for PR #226 to merge.
+    use 'theprimeagen/harpoon' 
 
     use 'mbbill/undotree'
 
@@ -42,6 +42,15 @@ return require('packer').startup(function(use)
             -- Snippets
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
+        }
+    }
+    use {
+      "nvim-neo-tree/neo-tree.nvim",
+        branch = "v2.x",
+        requires = { 
+          "nvim-lua/plenary.nvim",
+          "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+          "MunifTanjim/nui.nvim",
         }
     }
 end)
